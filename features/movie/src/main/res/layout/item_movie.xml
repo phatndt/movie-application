@@ -3,8 +3,24 @@
     android:layout_width="match_parent"
     android:layout_height="128dp"
     android:layout_margin="4dp">
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvMovieName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="12dp"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvMovieName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvOverview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:ellipsize="end"
+            android:maxLines="3"/>
+    </LinearLayout>
 </androidx.cardview.widget.CardView>
