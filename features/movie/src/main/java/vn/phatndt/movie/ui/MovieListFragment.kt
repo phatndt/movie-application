@@ -5,10 +5,12 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.paging.LoadState
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import vn.phatndt.movie.databinding.FragmentMovieBinding
@@ -39,7 +41,8 @@ class MovieListFragment : Fragment() {
             footer = MovieLoadStateAdapter()
         )
         movieAdapter.addLoadStateListener {
-            Log.d("phatndtttt", it.toString())
+            binding.loading.isVisible = it.refresh is LoadState.Loading
+            Log.d("phatndt", it.toString())
         }
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {

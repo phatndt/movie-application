@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.stateIn
 import vn.phatndt.domain.usecase.GetMovieListUseCase
 
 class MovieListViewModel(
-    private val getMovieListUseCase: GetMovieListUseCase
+    getMovieListUseCase: GetMovieListUseCase
 ) : ViewModel() {
     private var _movieListState = getMovieListUseCase().cachedIn(viewModelScope)
         .stateIn(

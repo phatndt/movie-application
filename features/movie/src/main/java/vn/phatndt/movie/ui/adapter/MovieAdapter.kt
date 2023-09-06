@@ -14,6 +14,7 @@ class MovieAdapter : PagingDataAdapter<Movie, MovieAdapter.MovieViewHolder>(Movi
         @SuppressLint("SetTextI18n")
         fun bind(movie: Movie, position: Int) {
             binding.tvMovieName.text = "$position ${movie.title}"
+            binding.tvOverview.text = "${movie.overview}"
         }
     }
 
