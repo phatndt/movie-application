@@ -18,5 +18,4 @@ class MovieListViewModel(
             initialValue = PagingData.empty(),
         )
     var movieListState = _movieListState
-
 }
